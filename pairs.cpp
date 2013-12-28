@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/pairs
+
 #include <iostream>
 #include <algorithm>
 
