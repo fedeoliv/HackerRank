@@ -11,6 +11,7 @@
   }
 return back the pointer to the head of the linked list in the below method.
 */
+
 Node* Insert(Node *head,int data)
 {
     Node *new_node = new Node();
