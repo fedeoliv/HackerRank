@@ -1,0 +1,73 @@
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+using namespace std;
+vector<bool> v;
+    vector<int> x;
+
+int main(){
+    ios_base :: sync_with_stdio(false);
+    int n;
+    int k,a;
+    cin >> n >> k;
+    set<int> s;
+    for(int x_i = 0;x_i < n;x_i++){
+       cin >> a;
+        s.insert(a);
+    }
+    set<int>::iterator it;
+    for(it = s.begin();it!=s.end(); it++){
+        x.push_back(*it);
+        v.push_back(0);
+    }
+    n=s.size();
+    if(n == 0 ){
+        cout <<"0\n";
+        return 0;
+    }
+    else if(n==1){
+        cout <<"1\n";
+        return 0;
+    }
+    int i=0 ,c=0;
+    while(i<n){
+        a = x[i]+k;
+        while(i<n){
+            if(x[i] > a){
+                break;
+            }
+            i++;
+        }
+        i--;
+        a = x[i]+k;
+        while(i<n){
+            if(x[i] > a){
+                break;
+            }
+            i++;
+        }
+        c++;
+    }
+    cout << c<<endl;
+    return 0;
+}
